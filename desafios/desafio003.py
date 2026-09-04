@@ -23,5 +23,5 @@ class Churrasco:
         f"Cada pessoa pagará R${self.dinheiro_por_pessoa:.2f}"
     )
 
-c1 = Churrasco("Churras dos Amigos", 15)
+c1 = Churrasco("Churras dos Amigos", 100)
 print(c1.analisar())
