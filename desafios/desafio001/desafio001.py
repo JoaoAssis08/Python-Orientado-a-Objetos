@@ -1,13 +1,13 @@
 class Funcionario:
+    empresa = "Curso em video"
 
     def __init__(self, nome, setor, cargo):
         self.nome = nome
         self.setor = setor
         self.cargo = cargo
-        self.empresa = "Curso em video"
     
     def aprentacao(self):
-        return f"Olá, sou {self.nome} e sou {self.cargo} do setor de {self.setor} da empresa {self.empresa}"
+        return f"Olá, sou {self.nome} e sou {self.cargo} do setor de {self.setor} da empresa {Funcionario.empresa}"
     
 
 f1 = Funcionario("João", "Desenvolvimento", "Dev Jr")
