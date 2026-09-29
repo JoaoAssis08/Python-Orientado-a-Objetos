@@ -1,9 +1,35 @@
+from rich import print
+from rich.panel import Panel
+from rich import inspect
+
 class Gamer:
 
-    def __init__(self, nome, nick, jogos_favoritos):
+    def __init__(self, nome, nick):
         self.nome = nome
         self.nick = nick
-        self.jogos_favoritos = jogos_favoritos
+        self.jogos_favoritos = list()
     
-    def mostrar_ficha(self):
-        return f"O nome do jogador(a) é {self.nome} e o nickname dele(a) é {self.nick} e os jogos faviritos dele(a) é {self.jogos_favoritos}"
+    def add_favoritos(self, game):
+        self.jogos_favoritos.append(game)
+        self.jogos_favoritos = sorted(self.jogos_favoritos, key=str.lower)
+
+    def ficha(self):
+        conteudo = f"Nome real: [black on blue] {self.nome} [/]"
+        conteudo += f"\n Jogos Favoritos:"
+        for num, game in enumerate(self.jogos_favoritos):
+            conteudo+= f"\n:video_game: [blue]{game}[/]"
+        painel = Panel(conteudo, title=f"Jogador <{self.nick}>", width=40)
+        print(painel)
+
+j1 = Gamer("Fabricio da Silva", "detonator2025")
+j1.add_favoritos("Mario Bros")
+j1.add_favoritos("Sonic")
+j1.add_favoritos("God of War")
+j1.add_favoritos("Fortnite")
+j1.ficha()
+
+j2 = Gamer("Olivia Souza", "peach_raivosa")
+j2.add_favoritos("Mario Bros")
+j2.add_favoritos("Call of Duty")
+j2.add_favoritos("Overwach")
+j2.ficha()
