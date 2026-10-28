@@ -47,5 +47,3 @@ class Leite(BebidaQuente):
     def servir(self):
         print("3. Servindo na caneca grande, ja com café.")
 
-bebida = Leite()
-bebida.preparar()
